@@ -19,7 +19,7 @@ fun NotificationScreen() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Welcom to, Notification Screen",
+            text = "Welcome to, Notification Screen",
             fontFamily = FontFamily.Cursive,
             fontSize = 30.sp,
             color = Color.Black

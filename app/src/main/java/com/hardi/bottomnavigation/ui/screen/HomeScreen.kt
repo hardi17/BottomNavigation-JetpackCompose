@@ -13,13 +13,16 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun HomeScreen(){
-    Box(modifier = Modifier.fillMaxSize(),
+fun HomeScreen() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
-    ){
-        Text(text = "Welcom to, Home Screen",
+    ) {
+        Text(
+            text = "Welcome to, Home Screen",
             fontFamily = FontFamily.Cursive,
             fontSize = 30.sp,
-            color = Color.Black)
+            color = Color.Black
+        )
     }
 }

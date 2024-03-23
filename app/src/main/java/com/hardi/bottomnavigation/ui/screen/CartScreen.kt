@@ -13,13 +13,16 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun CartScreen(){
-    Box(modifier = Modifier.fillMaxSize(),
+fun CartScreen() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
-    ){
-        Text(text = "Welcom to, Cart Screen",
+    ) {
+        Text(
+            text = "Welcome to, Cart Screen",
             fontFamily = FontFamily.Cursive,
             fontSize = 30.sp,
-            color = Color.Black)
+            color = Color.Black
+        )
     }
 }

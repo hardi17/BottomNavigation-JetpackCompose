@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bottomnavigation"
+    namespace = "com.hardi.bottomnavigation"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bottomnavigation"
+        applicationId = "com.hardi.bottomnavigation"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -69,7 +69,7 @@ dependencies {
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     androidTestImplementation("androidx.navigation:navigation-testing:2.7.7")
-    
+
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
