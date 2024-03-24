@@ -21,6 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import com.hardi.bottomnavigation.ui.screen.CartScreen
 import com.hardi.bottomnavigation.ui.screen.HomeScreen
 import com.hardi.bottomnavigation.ui.screen.NotificationScreen
+import com.hardi.bottomnavigation.ui.screen.SearchScreen
 
 @Composable
 fun AppNavigationBar() {
@@ -66,6 +67,9 @@ fun AppNavigationBar() {
             }
             composable(route = ScreensName.CartScreen.name) {
                 CartScreen()
+            }
+            composable (route = ScreensName.SearchScreen.name) {
+                SearchScreen()
             }
             composable(route = ScreensName.NotificationScreen.name) {
                 NotificationScreen()
