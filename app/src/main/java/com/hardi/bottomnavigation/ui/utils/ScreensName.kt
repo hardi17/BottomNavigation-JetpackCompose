@@ -4,5 +4,6 @@ enum class ScreensName{
     HomeScreen,
     CartScreen,
     SearchScreen,
-    NotificationScreen
+    NotificationScreen,
+    AccountScreen
 }
