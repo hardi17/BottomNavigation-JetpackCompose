@@ -2,6 +2,7 @@
 Using,
   - Kotlin
   - Jetpack compose for UI
+  - Top app bar with jetpack compose
   - Bottom navigation library in Jetpack compose
 
 
