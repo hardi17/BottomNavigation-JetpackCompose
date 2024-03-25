@@ -19,6 +19,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.hardi.bottomnavigation.ui.screen.AccountScreen
 import com.hardi.bottomnavigation.ui.screen.CartScreen
 import com.hardi.bottomnavigation.ui.screen.HomeScreen
 import com.hardi.bottomnavigation.ui.screen.NotificationScreen
@@ -65,7 +66,7 @@ fun AppNavigationBar() {
             modifier = Modifier.padding(paddingValues)
         ) {
             composable(route = ScreensName.HomeScreen.name) {
-                HomeScreen()
+                HomeScreen(navHostController)
             }
             composable(route = ScreensName.CartScreen.name) {
                 CartScreen()
@@ -75,6 +76,9 @@ fun AppNavigationBar() {
             }
             composable(route = ScreensName.NotificationScreen.name) {
                 NotificationScreen()
+            }
+            composable(route = ScreensName.AccountScreen.name) {
+                AccountScreen(navHostController)
             }
         }
 

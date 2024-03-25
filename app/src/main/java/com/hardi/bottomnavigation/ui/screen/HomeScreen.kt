@@ -18,16 +18,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.hardi.bottomnavigation.ui.utils.ScreensName
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navHostController: NavHostController) {
     TopAppBar(
         title = { Text("Home") },
         actions = {
-            IconButton(onClick = { ScreensName.SearchScreen.name }) {
+            IconButton(onClick = { navHostController.navigate(ScreensName.AccountScreen.name)}) {
                 Icon(Icons.Default.AccountCircle, contentDescription = "Account")
             }
         }

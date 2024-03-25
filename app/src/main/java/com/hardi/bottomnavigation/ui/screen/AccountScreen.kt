@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -20,19 +21,19 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
 @Composable
-fun AccountScreen() {
+fun AccountScreen(navHostController: NavHostController) {
     TopAppBar(
         navigationIcon = {
-//            IconButton(onClick = //* do someything */) {
+            IconButton(onClick = {navHostController.navigateUp()}) {
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
                     contentDescription = "Back"
                 )
-//            }
+           }
         },
         title = {
             Text(
@@ -40,13 +41,6 @@ fun AccountScreen() {
                 textAlign = TextAlign.Center,
                 overflow = TextOverflow.Clip,
                 modifier = Modifier.padding(10.dp)
-            )
-        },
-        actions = {
-            Icon(
-                imageVector = Icons.Default.Menu,
-                contentDescription = "Back",
-                modifier = Modifier.padding(15.dp)
             )
         }
     )
