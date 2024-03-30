@@ -24,11 +24,12 @@ import com.hardi.bottomnavigation.ui.utils.ScreensName
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navHostController: NavHostController) {
+fun HomeScreen(
+    onIconClick: () -> Unit) {
     TopAppBar(
         title = { Text("Home") },
         actions = {
-            IconButton(onClick = { navHostController.navigate(ScreensName.AccountScreen.name)}) {
+            IconButton(onClick = { onIconClick()}) {
                 Icon(Icons.Default.AccountCircle, contentDescription = "Account")
             }
         }

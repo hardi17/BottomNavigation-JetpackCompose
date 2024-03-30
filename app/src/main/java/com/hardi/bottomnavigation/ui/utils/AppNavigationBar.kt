@@ -15,10 +15,12 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navigation
 import com.hardi.bottomnavigation.ui.screen.AccountScreen
 import com.hardi.bottomnavigation.ui.screen.CartScreen
 import com.hardi.bottomnavigation.ui.screen.HomeScreen
@@ -43,10 +45,10 @@ fun AppNavigationBar() {
                         onClick = {
                             navHostController.navigate(navigationItems.screen) {
                                 popUpTo(navHostController.graph.findStartDestination().id) {
-                                    saveState = true
+//                                    saveState = true
+                                    this@navigate.launchSingleTop = true
                                 }
-                                launchSingleTop = true
-                                restoreState = true
+                                //    restoreState = true
                             }
                         },
                         icon = {
@@ -66,21 +68,36 @@ fun AppNavigationBar() {
             modifier = Modifier.padding(paddingValues)
         ) {
             composable(route = ScreensName.HomeScreen.name) {
-                HomeScreen(navHostController)
+                HomeScreen(
+                    onIconClick = {
+                        navigateToProfilescreen(navHostController)
+                    })
             }
+
+            composable(route = ScreensName.AccountScreen.name) {
+                AccountScreen(
+                    onBtnClick = {
+                        navHostController.popBackStack()
+                    })
+            }
+
             composable(route = ScreensName.CartScreen.name) {
                 CartScreen()
             }
-            composable (route = ScreensName.SearchScreen.name) {
+            composable(route = ScreensName.SearchScreen.name) {
                 SearchScreen()
             }
             composable(route = ScreensName.NotificationScreen.name) {
                 NotificationScreen()
-            }
-            composable(route = ScreensName.AccountScreen.name) {
-                AccountScreen(navHostController)
-            }
-        }
 
+            }
+
+        }
+    }
+}
+
+fun navigateToProfilescreen(navHostController: NavHostController) {
+    navHostController.navigate(ScreensName.AccountScreen.name) {
+        launchSingleTop = true
     }
 }

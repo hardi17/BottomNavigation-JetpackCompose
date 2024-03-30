@@ -25,10 +25,13 @@ import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AccountScreen(navHostController: NavHostController) {
+fun AccountScreen(
+    onBtnClick: () -> Unit
+) {
     TopAppBar(
         navigationIcon = {
-            IconButton(onClick = {navHostController.navigateUp()}) {
+            IconButton(
+                onClick = {onBtnClick()}) {
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
                     contentDescription = "Back"
